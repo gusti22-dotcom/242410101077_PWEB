@@ -2,63 +2,143 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Sistem Informasi Kasir Jasa Cuci Helm</title>
+    <title>Sistem Informasi Jasa Cuci Helm</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <img src="logoCuciHelm.png" alt="Logo Sistem" width="200">
-    <h1>Sistem Informasi Kasir Jasa Cuci Helm</h1>
+    <img src="logoCuciHelm.png" alt="Logo">
+    <h2>Sistem Informasi Jasa Cuci Helm</h2>
+
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Transaksi</a></li>
+            <li><a href="#">Laporan</a></li>
+        </ul>
+    </nav>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Data Layanan</a></li>
-        <li><a href="#">Transaksi</a></li>
-        <li><a href="#">Laporan</a></li>
-    </ul>
-</nav>
+<main>
 
-<div>
+    <!-- HERO -->
+    <section>
+        <h1>Dashboard Kasir</h1>
+        <p>Kelola layanan dan transaksi cuci helm dengan mudah.</p>
+    </section>
 
-    <aside>
-        <h2>Statistik</h2>
+    <div class="container">
 
-        <p>Jumlah Helm Dicuci Hari Ini: 10</p>
-        <p>Total Transaksi Hari Ini: 7</p>
-        <p>Total Pendapatan Hari Ini: Rp200.000</p>
+        <!-- SIDEBAR -->
+        <aside>
+            <h2>Filter Layanan</h2>
+            <label><input type="checkbox"> Cuci Biasa</label>
+            <label><input type="checkbox"> Cuci + Kaca</label>
+            <label><input type="checkbox"> Deep Clean</label>
+            <label><input type="checkbox"> Poles Helm</label>
+        </aside>
 
-    </aside>
+        <!-- CONTENT -->
+        <section class="content">
 
-    <main>
+            <!-- STATISTICS -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <p>Helm Hari Ini</p>
+                    <h3>10</h3>
+                </div>
 
-        <section>
-            <h2>Dashboard</h2>
-            <p>
-                Selamat datang di Sistem Informasi Kasir Jasa Cuci Helm. 
-                Sistem ini digunakan untuk mengelola layanan pencucian helm, 
-                mencatat transaksi pelanggan, serta melihat laporan pendapatan.
-            </p>
+                <div class="stat-card">
+                    <p>Transaksi</p>
+                    <h3>7</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pendapatan</p>
+                    <h3>Rp200.000</h3>
+                </div>
+            </div>
+
+            <!-- LAYANAN -->
+            <div class="card-container">
+                <div class="card">Cuci Biasa - Rp10.000</div>
+                <div class="card">Cuci + Kaca - Rp15.000</div>
+                <div class="card">Deep Clean - Rp20.000</div>
+                <div class="card">Poles Helm - Rp25.000</div>
+            </div>
+
+            <!-- FORM -->
+            <form>
+                <h2>Input Transaksi</h2>
+                <input type="text" placeholder="Nama Customer">
+                <input type="number" placeholder="Jumlah Helm">
+                <input type="text" placeholder="Jenis Layanan">
+                <button type="submit">Simpan</button>
+            </form>
+
+            <!-- TABLE -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Layanan</th>
+                        <th>Jumlah</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Andi</td>
+                        <td>Cuci Biasa</td>
+                        <td>2</td>
+                        <td>Rp20.000</td>
+                        <td>Proses</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Budi</td>
+                        <td>Deep Clean</td>
+                        <td>1</td>
+                        <td>Rp20.000</td>
+                        <td>Selesai</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </section>
 
-        <section>
-            <h3>Informasi Sistem</h3>
-            <p>
-                Melalui sistem ini, admin dapat menambahkan jenis layanan, 
-                melakukan transaksi kasir, serta memantau statistik usaha 
-                jasa cuci helm secara lebih mudah dan terorganisir.
-            </p>
-        </section>
+    </div>
 
-    </main>
-
-</div>
+</main>
 
 <footer>
-    <p>© 2026 Sistem Informasi Kasir Jasa Cuci Helm</p>
+    <div>
+        <h3>Tentang</h3>
+        <p>Sistem kasir jasa cuci helm berbasis web.</p>
+    </div>
+
+    <div>
+        <h3>Menu</h3>
+        <p>Dashboard</p>
+        <p>Layanan</p>
+        <p>Transaksi</p>
+    </div>
+
+    <div>
+        <h3>Kontak</h3>
+        <p>Email: admin@email.com</p>
+        <p>Telp: 08123456789</p>
+    </div>
 </footer>
 
 </body>
 </html>
+```
