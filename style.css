@@ -1,0 +1,326 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= GLOBAL ================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f6f7fb;
+    color: #111827;
+    padding-top: 70px;
+}
+
+/* FIX SEMUA GAMBAR */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================= NAVBAR ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    padding: 12px 30px;
+    z-index: 1000;
+    gap: 10px;
+}
+
+/* LOGO FIX TOTAL */
+header img {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: white;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+header h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* NAV */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6b7280;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background: #2563eb;
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================= HERO ================= */
+main section:first-child {
+    padding: 50px 30px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ================= SIDEBAR ================= */
+aside {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+}
+
+aside:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+aside h2 {
+    margin-bottom: 10px;
+}
+
+aside label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+aside label:hover {
+    color: #2563eb;
+}
+
+aside input {
+    accent-color: #2563eb;
+}
+
+/* ================= CONTENT ================= */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ================= STATS ================= */
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.stat-card p {
+    color: #6b7280;
+}
+
+.stat-card h3 {
+    margin-top: 5px;
+}
+
+/* ================= CARD ================= */
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0%;
+    background: #2563eb;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.card:hover::after {
+    width: 100%;
+}
+
+/* ================= FORM ================= */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    transition: 0.25s;
+}
+
+form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 6px rgba(37,99,235,0.2);
+    outline: none;
+}
+
+form button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    transform: scale(1.03);
+    background: #1d4ed8;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+th {
+    background: #f3f4f6;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+}
+
+tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tr:hover {
+    background: #eef2ff;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #111827;
+    color: #9ca3af;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+footer h3 {
+    color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (min-width: 768px) {
+
+    .container {
+        flex-direction: row;
+    }
+
+    aside {
+        width: 28%;
+    }
+
+    .content {
+        width: 72%;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+
+    aside {
+        width: 20%;
+    }
+
+    .content {
+        width: 80%;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
