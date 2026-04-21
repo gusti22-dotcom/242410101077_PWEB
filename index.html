@@ -24,121 +24,122 @@
 
 <main>
 
-    <!-- HERO -->
-    <section>
-        <h1>Dashboard Kasir</h1>
-        <p>Kelola layanan dan transaksi cuci helm dengan mudah.</p>
-    </section>
+<section>
+    <h1>Dashboard Kasir</h1>
+    <p>Kelola layanan dan transaksi cuci helm dengan mudah.</p>
+</section>
 
-    <div class="container">
+<div class="container">
 
-        <!-- SIDEBAR -->
-        <aside>
-            <h2>Filter Layanan</h2>
-            <label><input type="checkbox"> Cuci Biasa</label>
-            <label><input type="checkbox"> Cuci + Kaca</label>
-            <label><input type="checkbox"> Deep Clean</label>
-            <label><input type="checkbox"> Poles Helm</label>
-        </aside>
+<aside>
+    <h2>Filter Layanan</h2>
+    <label><input type="checkbox"> Cuci Biasa</label>
+    <label><input type="checkbox"> Cuci + Kaca</label>
+    <label><input type="checkbox"> Deep Clean</label>
+    <label><input type="checkbox"> Poles Helm</label>
+</aside>
 
-        <!-- CONTENT -->
-        <section class="content">
+<section class="content">
 
-            <!-- STATISTICS -->
-            <div class="stats-container">
-                <div class="stat-card">
-                    <p>Helm Hari Ini</p>
-                    <h3>10</h3>
-                </div>
-
-                <div class="stat-card">
-                    <p>Transaksi</p>
-                    <h3>7</h3>
-                </div>
-
-                <div class="stat-card">
-                    <p>Pendapatan</p>
-                    <h3>Rp200.000</h3>
-                </div>
-            </div>
-
-            <!-- LAYANAN -->
-            <div class="card-container">
-                <div class="card">Cuci Biasa - Rp10.000</div>
-                <div class="card">Cuci + Kaca - Rp15.000</div>
-                <div class="card">Deep Clean - Rp20.000</div>
-                <div class="card">Poles Helm - Rp25.000</div>
-            </div>
-
-            <!-- FORM -->
-            <form>
-                <h2>Input Transaksi</h2>
-                <input type="text" placeholder="Nama Customer">
-                <input type="number" placeholder="Jumlah Helm">
-                <input type="text" placeholder="Jenis Layanan">
-                <button type="submit">Simpan</button>
-            </form>
-
-            <!-- TABLE -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Layanan</th>
-                        <th>Jumlah</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Andi</td>
-                        <td>Cuci Biasa</td>
-                        <td>2</td>
-                        <td>Rp20.000</td>
-                        <td>Proses</td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Budi</td>
-                        <td>Deep Clean</td>
-                        <td>1</td>
-                        <td>Rp20.000</td>
-                        <td>Selesai</td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </section>
-
+<div class="stats-container">
+    <div class="stat-card">
+        <p>Total Helm</p>
+        <h3 id="statHelm">0</h3>
     </div>
+
+    <div class="stat-card">
+        <p>Total Transaksi</p>
+        <h3 id="statTransaksi">0</h3>
+    </div>
+
+    <div class="stat-card">
+        <p>Pendapatan</p>
+        <h3 id="statPendapatan">Rp0</h3>
+    </div>
+</div>
+
+<form id="formTransaksi">
+    <h2>Input Transaksi</h2>
+
+    <input type="text" id="nama" placeholder="Nama Customer">
+    <input type="number" id="jumlah" placeholder="Jumlah Helm">
+
+    <p id="layananTerpilih">Layanan: -</p>
+
+    <div class="card-container">
+        <div class="card" onclick="pilihLayanan('Cuci Biasa')">Cuci Biasa - Rp10.000</div>
+        <div class="card" onclick="pilihLayanan('Cuci + Kaca')">Cuci + Kaca - Rp15.000</div>
+        <div class="card" onclick="pilihLayanan('Deep Clean')">Deep Clean - Rp20.000</div>
+        <div class="card" onclick="pilihLayanan('Poles Helm')">Poles Helm - Rp25.000</div>
+    </div>
+
+    <button type="submit">Simpan</button>
+</form>
+
+<input type="text" placeholder="Cari nama..." onkeyup="searchData(this.value)">
+
+<select onchange="filterLayanan(this.value)">
+    <option value="Semua">Semua</option>
+    <option>Cuci Biasa</option>
+    <option>Cuci + Kaca</option>
+    <option>Deep Clean</option>
+    <option>Poles Helm</option>
+</select>
+
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Nama</th>
+<th>Layanan</th>
+<th>Jumlah</th>
+<th>Total</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</section>
+</div>
 
 </main>
 
 <footer>
-    <div>
-        <h3>Tentang</h3>
-        <p>Sistem kasir jasa cuci helm berbasis web.</p>
-    </div>
-
-    <div>
-        <h3>Menu</h3>
-        <p>Dashboard</p>
-        <p>Layanan</p>
-        <p>Transaksi</p>
-    </div>
-
-    <div>
-        <h3>Kontak</h3>
-        <p>Email: admin@email.com</p>
-        <p>Telp: 08123456789</p>
-    </div>
+    <p>© 2026 Sistem Cuci Helm</p>
 </footer>
+
+<!-- MODAL EDIT -->
+<div id="modalEdit" class="modal">
+    <div class="modal-content">
+        <h2>Edit Data</h2>
+
+        <input type="text" id="editNama">
+        <input type="number" id="editJumlah">
+
+        <select id="editStatus">
+            <option>Proses</option>
+            <option>Selesai</option>
+        </select>
+
+        <button onclick="simpanEdit()">Simpan</button>
+        <button onclick="tutupModal()">Batal</button>
+    </div>
+</div>
+
+<!-- MODAL HAPUS -->
+<div id="modalHapus" class="modal">
+    <div class="modal-content">
+        <h2>Hapus Data</h2>
+        <p>Yakin mau hapus data ini?</p>
+
+        <button onclick="confirmHapus()">Ya, Hapus</button>
+        <button onclick="tutupModalHapus()">Batal</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
-```

@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 /* ================= GLOBAL ================= */
@@ -13,7 +13,7 @@ body {
     padding-top: 70px;
 }
 
-/* FIX SEMUA GAMBAR */
+/* FIX GAMBAR */
 img {
     max-width: 100%;
     height: auto;
@@ -25,7 +25,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #ffffffcc;
+    background: rgba(255,255,255,0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #e5e7eb;
     display: flex;
@@ -35,7 +35,7 @@ header {
     gap: 10px;
 }
 
-/* LOGO FIX TOTAL */
+/* LOGO */
 header img {
     width: 40px !important;
     height: 40px !important;
@@ -215,7 +215,9 @@ form {
     border: 1px solid #e5e7eb;
 }
 
-form input, form button {
+form input, 
+form select, 
+form button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -224,7 +226,8 @@ form input, form button {
     transition: 0.25s;
 }
 
-form input:focus {
+form input:focus,
+form select:focus {
     border-color: #2563eb;
     box-shadow: 0 0 6px rgba(37,99,235,0.2);
     outline: none;
@@ -240,6 +243,15 @@ form button {
 form button:hover {
     transform: scale(1.03);
     background: #1d4ed8;
+}
+
+/* ================= SEARCH & FILTER ================= */
+input[type="text"], select {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    width: 100%;
 }
 
 /* ================= TABLE ================= */
@@ -266,6 +278,30 @@ tr:nth-child(even) {
 
 tr:hover {
     background: #eef2ff;
+}
+
+/* BUTTON TABLE */
+table button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.2s;
+}
+
+table button:first-child {
+    background: #2563eb;
+    color: white;
+}
+
+table button:last-child {
+    background: #ef4444;
+    color: white;
+}
+
+table button:hover {
+    transform: scale(1.05);
 }
 
 /* ================= FOOTER ================= */
@@ -323,4 +359,63 @@ footer h3 {
     .card-container {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+/* TAMBAHKAN DI PALING BAWAH */
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: scaleIn 0.25s ease;
+}
+
+.modal-content h2 {
+    margin-bottom: 12px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.modal-content button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:first-of-type {
+    background: #2563eb;
+    color: white;
+}
+
+.modal-content button:last-of-type {
+    background: #e5e7eb;
+}
+
+@keyframes scaleIn {
+    from {opacity:0; transform:scale(0.9);}
+    to {opacity:1; transform:scale(1);}
 }
